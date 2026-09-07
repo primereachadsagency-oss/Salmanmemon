@@ -70,6 +70,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 24px;
+            gap: 10px;
         }
 
         .badge-live {
@@ -79,11 +80,12 @@
             background: rgba(34, 197, 94, 0.1);
             border: 1px solid rgba(34, 197, 94, 0.2);
             color: var(--green-glow);
-            padding: 6px 12px;
+            padding: 6px 10px;
             border-radius: 20px;
             font-size: 11px;
             font-weight: 600;
             letter-spacing: 0.3px;
+            white-space: nowrap;
         }
 
         .pulse-dot {
@@ -101,19 +103,26 @@
             100% { opacity: 1; transform: scale(1); }
         }
 
+        .top-btn-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .top-join-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             background: rgba(34, 158, 217, 0.15);
             border: 1px solid rgba(34, 158, 217, 0.3);
             color: #ffffff;
             font-size: 11px;
             font-weight: 700;
-            padding: 6px 14px;
+            padding: 6px 12px;
             border-radius: 20px;
             text-decoration: none;
             transition: all 0.3s ease;
+            white-space: nowrap;
         }
 
         .top-join-btn:hover {
@@ -122,9 +131,20 @@
             box-shadow: 0 4px 12px var(--accent-glow);
         }
 
+        .top-join-btn.secondary {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .top-join-btn.secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+        }
+
         .top-join-btn svg {
-            width: 14px;
-            height: 14px;
+            width: 13px;
+            height: 13px;
             fill: #ffffff;
         }
 
@@ -468,16 +488,25 @@ src="https://www.facebook.com/tr?id=920501367778655&ev=PageView&noscript=1"
 <body>
 
     <div class="page-container">
-        <!-- Top Status Bar with Top Join Button -->
+        <!-- Top Status Bar with 2 Buttons -->
         <div class="top-bar">
             <div class="badge-live">
                 <span class="pulse-dot"></span>
                 Free Access Open
             </div>
-            <a href="https://t.me/+dcGpL_RyuDlkZWQ1" target="_blank" class="top-join-btn" onclick="fbq('track', 'Lead'); fbq('track', 'Subscribe', {value: '1.00', currency: 'INR', time: new Date().toISOString()}); fbq('trackCustom', 'TelegramSubscriberRealtime', {timestamp: Date.now()});">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.15.13.11.17.26.19.37.02.11.03.35.01.54z"/></svg>
-                Join Now
-            </a>
+            
+            <div class="top-btn-group">
+                <!-- Button 1 (Secondary Style) -->
+                <a href="https://t.me/+dcGpL_RyuDlkZWQ1" target="_blank" class="top-join-btn secondary" onclick="fbq('track', 'Lead'); fbq('track', 'Subscribe', {value: '1.00', currency: 'INR', time: new Date().toISOString()}); fbq('trackCustom', 'TelegramSubscriberRealtime', {timestamp: Date.now()});">
+                    ⚡ Fast Join
+                </a>
+
+                <!-- Button 2 (Primary Blue Style) -->
+                <a href="https://t.me/+dcGpL_RyuDlkZWQ1" target="_blank" class="top-join-btn" onclick="fbq('track', 'Lead'); fbq('track', 'Subscribe', {value: '1.00', currency: 'INR', time: new Date().toISOString()}); fbq('trackCustom', 'TelegramSubscriberRealtime', {timestamp: Date.now()});">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.15.13.11.17.26.19.37.02.11.03.35.01.54z"/></svg>
+                    Join Now
+                </a>
+            </div>
         </div>
 
         <!-- Profile Section -->
@@ -487,12 +516,6 @@ src="https://www.facebook.com/tr?id=920501367778655&ev=PageView&noscript=1"
                 <div class="verified-badge">
                     <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
                 </div>
-            <!-- CTA Button with Real-time Subscriber Tracking -->
-        <a href="https://t.me/+dcGpL_RyuDlkZWQ1" target="_blank" class="cta-button" onclick="fbq('track', 'Lead'); fbq('track', 'Subscribe', {value: '1.00', currency: 'INR', time: new Date().toISOString()}); fbq('trackCustom', 'TelegramSubscriberRealtime', {timestamp: Date.now()});">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.35-.49.96-.75 3.78-1.65 6.31-2.74 7.58-3.27 3.61-1.51 4.36-1.77 4.85-1.78.11 0 .35.03.5.15.13.11.17.26.19.37.02.11.03.35.01.54z"/></svg>
-            Join Free Telegram Channel
-        </a>
-            
             </div>
             <h1 class="profile-title">𝗦𝗔𝗟𝗠𝗔𝗡 𝗠𝗘𝗠𝗢𝗡 𝗧𝗥𝗔𝗗𝗘𝗥 𝗜𝗡𝗗𝗜𝗔 (𝗛𝗮𝗹𝗮𝗹 𝗪𝗼𝗿𝗸)</h1>
             <p class="profile-subtitle">Market Analyst & Strategy Expert</p>
